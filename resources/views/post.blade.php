@@ -3,7 +3,10 @@
 @section ('content')
     <article>
         <h1>{{ $post->title }}</h1>
-        <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a>
+        <p>
+            By <a href="#">Jeffrey Way</a> in 
+            <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a>
+        </p>
         <div>
             {!! $post->body !!}
         </div>
