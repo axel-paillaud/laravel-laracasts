@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\File;
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +18,9 @@ use App\Models\Category;
 */
 
 Route::get('/', function () {
-    
-    Illuminate\Support\Facades\DB::listen(function ($query) {
-        logger($query->sql, $query->bindings);
-    });
 
     return view('posts', [
-        'posts' => Post::latest()->with('category')->get(),
+        'posts' => Post::latest()
     ]);
 });
 
@@ -36,6 +33,12 @@ Route::get('posts/{post:slug}', function(Post $post) {
 
 Route::get('categories/{category:slug}', function(Category $category) {
     return view('posts', [
-        'posts' => $category->posts,
+        'posts' => $category->posts
+    ]);
+});
+
+Route::get('authors/{author:username}', function(User $author) {
+    return view('posts', [
+        'posts' => $author->posts
     ]);
 });
