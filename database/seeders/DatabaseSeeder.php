@@ -41,8 +41,8 @@ class DatabaseSeeder extends Seeder
             'category_id' => $family->id,
             'title' => 'My Family Post',
             'slug' => 'my-first-post',
-            'excerpt' => 'Lorem ipsum dolor sit amet',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            'excerpt' => '<p>Lorem ipsum dolor sit amet</p>',
+            'body' => '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Maecenas massa diam, fringilla sed ornare eu, tristique in velit. 
                 In congue eros eros, quis euismod dui lobortis quis. Nullam nulla 
                 augue, venenatis a ultricies nec, tristique vel mauris. Integer rutrum
@@ -59,7 +59,7 @@ class DatabaseSeeder extends Seeder
                 sit amet feugiat magna lobortis. Sed luctus convallis egestas. 
                 Quisque sit amet euismod lorem. Vestibulum ante ipsum primis
                 in faucibus orci luctus et ultrices posuere cubilia curae; 
-                Morbi convallis ex mi, at sagittis felis scelerisque ac. ',
+                Morbi convallis ex mi, at sagittis felis scelerisque ac.</p>',
         ]);
 
         Post::create([
@@ -67,8 +67,8 @@ class DatabaseSeeder extends Seeder
             'category_id' => $personal->id,
             'title' => 'My Personal Post',
             'slug' => 'my-second-post',
-            'excerpt' => 'Lorem ipsum dolor sit amet',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            'excerpt' => '<p>Lorem ipsum dolor sit amet</p>',
+            'body' => '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Maecenas massa diam, fringilla sed ornare eu, tristique in velit. 
                 In congue eros eros, quis euismod dui lobortis quis. Nullam nulla 
                 augue, venenatis a ultricies nec, tristique vel mauris. Integer rutrum
@@ -85,16 +85,16 @@ class DatabaseSeeder extends Seeder
                 sit amet feugiat magna lobortis. Sed luctus convallis egestas. 
                 Quisque sit amet euismod lorem. Vestibulum ante ipsum primis
                 in faucibus orci luctus et ultrices posuere cubilia curae; 
-                Morbi convallis ex mi, at sagittis felis scelerisque ac. ',
-        ]);
+                Morbi convallis ex mi, at sagittis felis scelerisque ac.</p>',        
+]);
 
         Post::create([
             'user_id' => $user->id,
             'category_id' => $work->id,
             'title' => 'My Work Post',
             'slug' => 'my-third-post',
-            'excerpt' => 'Lorem ipsum dolor sit amet',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            'excerpt' => '<p>Lorem ipsum dolor sit amet</p>',
+            'body' => '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Maecenas massa diam, fringilla sed ornare eu, tristique in velit. 
                 In congue eros eros, quis euismod dui lobortis quis. Nullam nulla 
                 augue, venenatis a ultricies nec, tristique vel mauris. Integer rutrum
@@ -111,7 +111,7 @@ class DatabaseSeeder extends Seeder
                 sit amet feugiat magna lobortis. Sed luctus convallis egestas. 
                 Quisque sit amet euismod lorem. Vestibulum ante ipsum primis
                 in faucibus orci luctus et ultrices posuere cubilia curae; 
-                Morbi convallis ex mi, at sagittis felis scelerisque ac. ',
+                Morbi convallis ex mi, at sagittis felis scelerisque ac.</p>',
         ]);
 
         // \App\Models\User::factory()->create([
