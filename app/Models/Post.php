@@ -20,6 +20,18 @@ class Post extends Model
                 ->where('title', 'like', '%' . request('search') . '%')
                 ->orWhere('body', 'like', '%' . request('search') . '%');
         }
+        
+         // Here, the 'whereColumn()' is important, because without that, the 
+         // 'posts.category_id' is interpreted as a string. $category is fine
+         // because we actually want a string
+        $query->when($filters['category'] ?? false, fn($query, $category) => 
+            $query
+                ->whereExists(fn($query) =>
+                    $query->from('categories')
+                        ->whereColumn('categories.id', 'posts.category_id')
+                        ->where('categories.slug', $category)
+                )
+        );
     }
 
     public function category()
