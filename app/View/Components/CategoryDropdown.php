@@ -15,7 +15,8 @@ class CategoryDropDown extends Component
     public function render(): View|Closure|string
     {
         return view('components.category-dropdown', [
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'currentCategory' => Category::firstWhere('slug', request('category'))
         ]);
     }
 }
