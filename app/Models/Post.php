@@ -16,10 +16,11 @@ class Post extends Model
     public function scopeFilter($query, array $filters)
     {
         if ($filters['search'] ?? false) {
-            $query
-                ->where('title', 'like', '%' . request('search') . '%')
-                ->orWhere('body', 'like', '%' . request('search') . '%');
-        }
+            $query->where(fn($query) => 
+                $query->where('title', 'like', '%' . request('search') . '%')
+                ->orWhere('body', 'like', '%' . request('search') . '%')
+            );
+        };
         
          // Here, the 'whereColumn()' is important, because without that, the 
          // 'posts.category_id' is interpreted as a string. $category is fine
